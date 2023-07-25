@@ -2,7 +2,7 @@ import Navbar from '@/components/Navbar'
 import './globals.css'
 import { Inter } from 'next/font/google'
 import Footer from '@/components/Footer'
-import Head from 'next/head'
+
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -14,18 +14,17 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <Head>
-        <link rel='shortcut icon' href='/images/favicon.ico' />
-        <title>Pokedéx</title>
-      </Head>
-      <body className={inter.className}>
+      <head />
+    
+      <body className="main-container">
         
         <Navbar />
 
         {children} 
 
-        <Footer />
+        
       </body>
+      <Footer />
     </html>
   )
 }
