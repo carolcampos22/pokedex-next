@@ -38,4 +38,4 @@ export default function Pokemon({pokemon}) {
     )
 }
 
-//pré-renderização dinâmica
+//
