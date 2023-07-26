@@ -8,7 +8,7 @@ export async function getStaticProps() {
     const api = 'https://pokeapi.co/api/v2/pokemon/'
     const res = await fetch(`${api}/?limit=${maxPokemons}`)
     const data = await res.json()
-    console.log(data)
+    
     //add pokemon index
     data.results.forEach((item, index) => {
         item.id = index + 1
