@@ -1,43 +1,79 @@
-import RootLayout from "@/app/layout";
-import Image from "next/image";
-import styles from "../app/styles/Home.module.css"
-import Card from "@/components/Card";
+import React, { useState } from 'react';
+import RootLayout from '@/app/layout';
+import Image from 'next/image';
+import styles from '@/app/styles/Home.module.css';
+import Card from '@/components/Card';
 
 export async function getStaticProps() {
-    const maxPokemons = 251
-    const api = 'https://pokeapi.co/api/v2/pokemon/'
-    const res = await fetch(`${api}/?limit=${maxPokemons}`)
-    const data = await res.json()
-    
-    //add pokemon index
-    data.results.forEach((item, index) => {
-        item.id = index + 1
-    });
+  const maxPokemons = 251;
+  const api = 'https://pokeapi.co/api/v2/pokemon/';
+  const res = await fetch(`${api}/?limit=${maxPokemons}`);
+  const data = await res.json();
 
-    return {
-        props: {
-            pokemons: data.results,
-        },
-    }
+  // add pokemon index
+  data.results.forEach((item, index) => {
+    item.id = index + 1;
+  });
+
+  return {
+    props: {
+      pokemons: data.results,
+    },
+  };
 }
 
 export default function Home({ pokemons }) {
-    
-    return (
-        <RootLayout>
-            <>
-                <div className={styles.title_container}>
-                    <h1 className={styles.title}>Poké<span>dex</span></h1>
-                    <Image src="/images/pokeball.png" width="50" height="50" alt="Pokeball" />
-                </div>
-                <div className={styles.pokemon_container}>
-                    {pokemons.map((pokemon) => (
-                        <Card key={pokemon.id} pokemon={pokemon} />
-                    ))} {/*map com parentesis pq está retornando um objeto (JSX) */}
-                </div>
-            </>
-        </RootLayout>
-    )
-}
+  const itemsPerPage = 20;
+  const [visiblePokemons, setVisiblePokemons] = useState(itemsPerPage);
+  const [searchPokemon, setSearchPokemon] = useState("");
 
-  //link do vídeo do projeto original: https://www.youtube.com/watch?v=5ic5drXl3so&list=PLnDvRpP8BnezfJcfiClWskFOLODeqI_Ft&index=18
+  const loadMorePokemons = () => {
+    if (visiblePokemons + itemsPerPage <= pokemons.length) {
+      setVisiblePokemons((prevVisiblePokemons) => prevVisiblePokemons + itemsPerPage);
+    } else {
+      setVisiblePokemons(pokemons.length);
+    }
+  };
+
+  const handleSearchPokemon = (e) => {
+    const value = e.target.value.toLowerCase();
+    setSearchPokemon(value);
+  };
+
+  //
+  const filteredPokemons = pokemons.filter((pokemon) => pokemon.name.toLowerCase().includes(searchPokemon));
+
+  return (
+    <RootLayout>
+      <>
+        <div className={styles.title_container}>
+          <h1 className={styles.title}>
+            Poké<span>dex</span>
+          </h1>
+          <Image src="/images/pokeball.png" width="50" height="50" alt="Pokeball" />
+        </div>
+        <div className={styles.search_container}>
+          <input
+            className={styles.input}
+            type="text"
+            placeholder="Buscar por nome do Pokémon..."
+            value={searchPokemon}
+            onChange={handleSearchPokemon}
+          />
+        </div>
+        <div className={styles.pokemon_container}>
+          {filteredPokemons.length > 0 ? (
+            filteredPokemons.slice(0, visiblePokemons).map((pokemon) => (
+              <Card key={pokemon.id} pokemon={pokemon} />
+            ))
+          ) : (
+            <div className={styles.not_found}>Nenhum Pokémon encontrado.</div>
+          )}
+        </div>
+        {visiblePokemons < pokemons.length && (
+          <div className={styles.button}><button onClick={loadMorePokemons}>Carregar mais Pokémon</button></div>
+        )}
+      </>
+    </RootLayout>
+  );
+}

@@ -1,34 +1,84 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Pokédex <img src="./public/images/favicon.ico" />
 
-## Getting Started
+## Descrição
 
-First, run the development server:
+O Projeto Pokédex é uma aplicação web que exibe informações sobre diferentes Pokémon.
 
+## Funcionalidades
+
+- Exibição de informações sobre pokémons, como nome, tipo etc.
+- Capacidade de buscar Pokémon pelo nome.
+- Carregar mais Pokémon à medida que o usuário rola a página.
+
+## Tecnologias Utilizadas
+
+- React
+- Next.js
+- CSS Modules
+
+## Layout
+
+Home
+
+<img src="./public/images/home.png" />
+<hr />
+
+Detalhes
+
+<img src="./public/images/detail.png" />
+<hr />
+
+Sobre
+
+<img src="./public/images/about.png" >
+<hr />
+
+ ## Demosntração
+
+ ##### Link do projeto:
+
+ <hr />
+
+ ## Como rodar este projeto
+ #### Pré-requisitos
+
+- Node.js (versão 12 ou superior)
+- npm (gerenciador de pacotes do Node.js)
+
+#### Instalação
+
+1. Clone este repositório para o seu computador:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+git clone https://github.com/carolcampos22/pokedex-next
+```
+2. Acesse o diretório do projeto:
+```bash
+cd pokedex-next
+```
+3. Instale as dependências do projeto:
+```bash
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+#### Uso
+1. Inicie o servidor de desenvolvimento:
+```bash
+npm run dev
+```
+2. Abra o navegador e acesse `http://localhost:3000` para visualizar o Pokédex.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## Contribuição
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Contribuições são bem-vindas! Se você quiser contribuir com o projeto, siga os seguintes passos:
 
-## Learn More
+1. Faça um fork deste repositório.
+2. Crie uma branch para sua nova funcionalidade ou correção de bug: `git checkout -b minha-nova-funcionalidade`
+3. Faça suas alterações e commit: `git commit -m "Adicionar nova funcionalidade"`
+4. Envie as alterações para o GitHub: `git push origin minha-nova-funcionalidade`
+5. Abra uma pull request no repositório original.
 
-To learn more about Next.js, take a look at the following resources:
+## Autora
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+<h4> Carolina M. Campos - Desenvolvedora Front-end</h4>
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+LinkedIn: https://www.linkedin.com/in/dev-carolina-mendes-campos/
