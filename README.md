@@ -67,15 +67,6 @@ npm run dev
 ```
 2. Abra o navegador e acesse `http://localhost:3000` para visualizar o Pokédex.
 
-## Contribuição
-
-Contribuições são bem-vindas! Se você quiser contribuir com o projeto, siga os seguintes passos:
-
-1. Faça um fork deste repositório.
-2. Crie uma branch para sua nova funcionalidade ou correção de bug: `git checkout -b minha-nova-funcionalidade`
-3. Faça suas alterações e commit: `git commit -m "Adicionar nova funcionalidade"`
-4. Envie as alterações para o GitHub: `git push origin minha-nova-funcionalidade`
-5. Abra uma pull request no repositório original.
 
 ## Autora
 
