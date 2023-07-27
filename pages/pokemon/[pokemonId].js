@@ -38,7 +38,9 @@ export default function Pokemon({ pokemon }) {
         <RootLayout>
             
             <div className={styles.pokemon_container}>
+                
                 <h1 className={styles.title}>{pokemon.name}</h1>
+                
                 <Image
                     src={`/images/pokemons/poke_${imageNumber}.gif`}
                     width="300"
@@ -73,4 +75,3 @@ export default function Pokemon({ pokemon }) {
     )
 }
 
-// detalhes de cada pokemon
