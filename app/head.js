@@ -1,8 +1,7 @@
 export default function Head() {
     return (
         <>
-            <link rel='shortcut icon' href='/images/favicon.ico' />
-            <title>Pokedéx</title>
+            <meta name="viewport" content="width=device-width, initial-scale=1" />
         </>
     )
 }

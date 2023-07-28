@@ -44,3 +44,16 @@
     background-color: #E33D33;
     color: #fff;
 }
+
+/*responsividade*/
+@media (max-width: 850px) {
+    .card {
+        width: 50%;
+    }
+}
+
+@media (max-width: 1100px){
+    .card{
+        width: 70%;
+    }
+  }
