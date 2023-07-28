@@ -22,7 +22,7 @@
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    max-width: 1100px;
+    max-width: 60vw;
     margin: 0 auto;
 }
 
@@ -54,7 +54,7 @@
     border-radius: 5px;
     height: 5vh;
     margin-left: 2vw;
-    width: 15%;
+    width: 15vw;
 
 }
 
@@ -67,3 +67,24 @@
     color: #E33D33;
     text-align: center;
 }
+
+/* For screens with a width less than or equal to 768px */
+@media (max-width: 850px) {
+    .title {
+      font-size: 2em;
+    }
+  
+    .pokemon_container {
+      max-width: 90vw;
+      flex-direction: column;
+    }
+  
+    .input {
+      width: 80%;
+      margin-bottom: 2vh;
+      margin-left: 8vw;
+    }
+  }
+
+  
+  

@@ -44,3 +44,15 @@
     background-color: #E33D33;
     color: #fff;
 }
+
+@media (max-width: 850px) {
+    .card {
+        width: 50%;
+    }
+}
+
+@media (max-width: 1000px){
+    .card{
+        width: 80%;
+    }
+  }
