@@ -68,14 +68,13 @@
     text-align: center;
 }
 
-/* For screens with a width less than or equal to 768px */
 @media (max-width: 850px) {
     .title {
       font-size: 2em;
     }
   
     .pokemon_container {
-      max-width: 90vw;
+      max-width: 80vw;
       flex-direction: column;
     }
   
@@ -85,6 +84,7 @@
       margin-left: 8vw;
     }
   }
+
 
   
   
